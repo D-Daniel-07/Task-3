@@ -1,0 +1,53 @@
+
+<a class="header btn btn-success" [routerLink]="['employee-form']" *ngIf="showHeader">Add Employee</a>
+<table class="table table-striped" *ngIf="showTable">
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Date of Birth</th>
+        <th class="action">Actions</th>
+      </tr>
+    <tbody>
+      <tr *ngFor="let employee of employeeData">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.first_name }}</td>
+        <td>{{ employee.last_name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{employee.dob | date}}</td>
+        <td><button class="btn btn-outline-info" (click)="filterElementById(employee.id)"><i class="fa-regular fa-eye"></i></button>
+        <button  class="btn btn-outline-primary" (click)="openUpdateForm(employee)"><i class="fa-solid fa-pencil"></i></button>
+        <button class="btn btn-outline-danger" (click)="confirmDelete(employee.id)" ><i class="fa-solid fa-trash" ></i></button></td>
+      </tr>
+    </tbody>
+</table>
+
+<div *ngIf="showDetails" class="card mt-3">
+  <div class="card-header">
+    <h5 class="card-title">Employee Details</h5>
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>ID:</strong> {{ selectedEmployee?.id }}</li>
+      <li class="list-group-item"><strong>First Name:</strong> {{ selectedEmployee?.first_name }}</li>
+      <li class="list-group-item"><strong>Last Name:</strong> {{ selectedEmployee?.last_name }}</li>
+      <li class="list-group-item"><strong>Email:</strong> {{ selectedEmployee?.email }}</li>
+      <li class="list-group-item"><strong>Date of Birth:</strong> {{ selectedEmployee?.dob | date}}</li>
+    </ul>
+  </div>
+  <div class="card-footer text-muted">
+    <button class="btn btn-secondary" (click)="closeDetails()">Close</button>
+  </div>
+</div>
+
+<form class="updateForm" [formGroup]="updateForm" *ngIf="showForm">
+  <h4>Enter Employee Details</h4>
+  <div>Employee Id : </div><input type="text" placeholder="Enter Employee Id" formControlName="id"><br>
+  <div>Employee First Name :</div><input type="text" placeholder="Enter Employee First Name" formControlName="first_name"><br>
+  <div>Employee Last Name : </div><input type="text" placeholder="Enter Employee Last Name" formControlName="last_name"><br>
+  <div>Employee Email :</div><input type="text" placeholder="Enter Employee Email" formControlName="email"><br>
+  <div>Employee DateofBirth :</div><input type="text" placeholder="Enter Employee Dob" formControlName="dob"><br>
+  <button class="btn btn-primary" type="submit" (click)="updateIt(updateForm.value.id)">Save</button>
+  <button class="btn btn-danger" (click)="closeDetails()">Cancel</button>
+</form>

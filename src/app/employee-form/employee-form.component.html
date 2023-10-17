@@ -1,0 +1,11 @@
+<form class="eventForm" [formGroup]="employeeForm">
+    <h4>Enter Employee Details</h4>
+    <div>Employee Id  : </div><input type="text" placeholder="Enter Employee Id" formControlName="id"><br>
+    <div>Employee First Name :</div><input type="text" placeholder="Enter Employee First Name" formControlName="first_name"><br>
+    <div>Employee Last Name : </div><input type="text" placeholder="Enter Employee Last Name" formControlName="last_name"><br>
+    <div>Employee Email :</div><input type="text" placeholder="Enter Employee Email" formControlName="email"><br>
+    <div>Employee Dob :</div><input type="text" placeholder="Enter Employee Dob" formControlName="dob"><br>
+    <button class="btn btn-primary" type="submit" (click)="postRepos()" [routerLink]="['']">Add Employee</button>
+    <button class="btn btn-danger" [routerLink]="['']">Cancel</button>
+</form>
+  

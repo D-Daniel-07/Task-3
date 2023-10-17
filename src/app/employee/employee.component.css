@@ -1,0 +1,64 @@
+.btn{
+    margin-left: 20px;
+}
+.action{
+    padding-left: 28px;
+}
+table{
+    width: 1200px;
+    margin-left: 40px;
+}
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}
+.header{
+    float: right;
+    height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 0px;
+}
+.card{
+    text-align: center;
+    width: 1000px;
+    margin-left: 130px;
+}
+.updateForm input
+{
+    width:20%;
+    margin-top: 10px;
+}
+.updateForm div
+{
+    display:inline-block;
+    width: 200px;
+    text-align: left;
+}
+.updateForm
+{
+   text-align: center;
+   margin-top: 130px;
+}
+
+.btn-primary{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.btn-danger{
+    margin-top: 20px;
+}
